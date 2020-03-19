@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <title>Stefan Le Bohec</title>
+    </head>
+
+    <body>
+        <section class="ecran">
+            <div class="logo">logo</div>
+            <div class="menu">
+                <ul>
+                    <li class="line"><a class="ancre" href="#prez">Présentation</a></li>
+                    <li class="line"><a class="ancre">Créations</a></li>
+                    <li class="line"><a class="ancre" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="nav">nav</div>
+            <scroll-container class="principal">
+                <scroll-page class="name">
+                    
+                    <div class="stefan"><h1>Stefan<br>Le Bohec</h1></div>
+                    <div class="web"><h2>Webdesigner</h2></div>
+                </scroll-page>
+                <scroll-page id="prez">
+                    <div class="who">Qui suis-je ?</div>
+                    <div class="descriptif">ma description</div>
+                </scroll-page>
+                <scroll-page class="crea">
+                    <div class="Tcrea">Créations</div>
+                    <div class="portf">
+                        <img class="reca" src="Mockup.png" width="200vw" height="200vw">
+                        <img class="reca" src="Mockup.png" width="200vw" height="200vw">
+                        <img class="reca" src="Mockup.png" width="200vw" height="200vw">
+                        <img class="reca" src="Mockup.png" width="200vw" height="200vw">
+                        <img class="reca" src="Mockup.png" width="200vw" height="200vw">
+                        <img class="reca" src="Mockup.png" width="200vw" height="200vw">
+                    </div>
+                </scroll-page>
+
+                <scroll-page id="contact" class="contact">
+                    <div class="tcon">Contact</div>
+                    <div class="infos">infos</div>
+                </scroll-page>
+            </scroll-container>
+            <div class="signature">signature</div>
+        </section>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$('.ancre').on('click', function() { // Au clic sur un élément
+			var page = $(this).attr('href'); // Page cible
+			var speed = 750; // Durée de l'animation (en ms)
+			$('html, body').animate( { scrollTop: $(page).offset().top }, speed ); // Go
+			return false;
+		});
+	});
+</script>
+    </body>
+
+</html>
