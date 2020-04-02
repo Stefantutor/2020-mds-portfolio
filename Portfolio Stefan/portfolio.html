@@ -15,7 +15,7 @@
             <div class="menu">
                 <ul>
                     <li class="line"><a class="ancre" href="#prez">Présentation</a></li>
-                    <li class="line"><a class="ancre">Créations</a></li>
+                    <li class="line"><a class="ancre" href="#crea">Créations</a></li>
                     <li class="line"><a class="ancre" href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -28,17 +28,24 @@
                 </scroll-page>
                 <scroll-page id="prez">
                     <div class="who">Qui suis-je ?</div>
-                    <div class="descriptif">ma description</div>
+                    <div class="descriptif">Etudiant en Webdesign, j'ai été bercé par la culture du cinéma et des jeux-vidéo, autant dire une culture qui se renouvelle perpétuellement. <br>
+                        Le renouvellement, c'est ce que je recherche dans un métier, me permettre de ne jamais réaliser la même chose. <br>Que ce soit pour moi, ou pour toi, mon potentiel futur client, qui cherche certainement à te démarquer
+                        des autres.<br>
+                        J'apprends donc chaque jour à améliorer ma créativité pour la mettre à votre service.
+                    </div>
                 </scroll-page>
-                <scroll-page class="crea">
+                <scroll-page id="crea" class="crea">
                     <div class="Tcrea">Créations</div>
                     <div class="portf">
+                        <div id="portfolio" class="reca">
+                            <div v-for="projet in projets" :id="projet.titre">{{projet.titre}}</div>
+                        </div>
+                        <!--<img class="reca" src="Mockup.png" width="200vw" height="200vw">
                         <img class="reca" src="Mockup.png" width="200vw" height="200vw">
                         <img class="reca" src="Mockup.png" width="200vw" height="200vw">
                         <img class="reca" src="Mockup.png" width="200vw" height="200vw">
                         <img class="reca" src="Mockup.png" width="200vw" height="200vw">
-                        <img class="reca" src="Mockup.png" width="200vw" height="200vw">
-                        <img class="reca" src="Mockup.png" width="200vw" height="200vw">
+                        <img class="reca" src="Mockup.png" width="200vw" height="200vw">-->
                     </div>
                 </scroll-page>
 
@@ -50,16 +57,46 @@
             <div class="signature">signature</div>
         </section>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
-	$(document).ready(function() {
-		$('.ancre').on('click', function() { // Au clic sur un élément
-			var page = $(this).attr('href'); // Page cible
-			var speed = 750; // Durée de l'animation (en ms)
-			$('html, body').animate( { scrollTop: $(page).offset().top }, speed ); // Go
-			return false;
-		});
-	});
+	new Vue({
+        el:"#portfolio",
+        data:
+         {
+            projets: [
+                {
+                    titre: "Logo IronTrip",
+                    image: "mockup.png",
+                    description: "Logo d'application de voyage"
+                },
+                {
+                    titre: "logo2",
+                    image: "",
+                    description: "Logo d'application de voyage"
+                },
+                {
+                    titre: "Logo IronTrip",
+                    image: "",
+                    description: "Logo d'application de voyage"
+                },
+                {
+                    titre: "Logo IronTrip",
+                    image: "",
+                    description: "Logo d'application de voyage"
+                },
+                {
+                    titre: "Logo IronTrip",
+                    image: "",
+                    description: "Logo d'application de voyage"
+                },
+                {
+                    titre: "Logo IronTrip",
+                    image: "",
+                    description: "Logo d'application de voyage"
+                }
+            ]
+        }
+    })
 </script>
     </body>
 
