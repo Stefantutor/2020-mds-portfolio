@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <title>Stefan Le Bohec</title>
+    </head>
+
+    <body>
+        <section class="ecran">
+            <div class="logo">
+                <img src="Logostefanportfolio-8.png" width="300px">
+            </div>
+            <div class="menu">
+                <ul>
+                    <li class="line"><a class="ancre" href="#prez">Présentation</a></li>
+                    <li class="line"><a class="ancre" href="#crea">Créations</a></li>
+                    <li class="line"><a class="ancre" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <!--<div class="nav"></div>-->
+            <scroll-container class="principal">
+                <scroll-page class="name">
+                    
+                    <div class="stefan"><h1>Stefan<br>Le Bohec</h1></div>
+                    <div class="web"><h2>Webdesigner</h2></div>
+                </scroll-page>
+                <scroll-page id="prez">
+                    <div class="who">Qui suis-je ?</div>
+                    <div class="descriptif">Etudiant en Webdesign, j'ai été bercé par la culture du cinéma et des jeux-vidéo, autant dire une culture qui se renouvelle perpétuellement. <br>
+                        Le renouvellement, c'est ce que je recherche dans un métier, me permettre de ne jamais réaliser la même chose. <br>Que ce soit pour moi, ou pour toi, mon potentiel futur client, qui cherche certainement à te démarquer
+                        des autres.<br>
+                        J'apprends donc chaque jour à améliorer ma créativité pour la mettre à votre service.
+                    </div>
+                </scroll-page>
+                <scroll-page id="crea" class="crea">
+                    <div class="Tcrea">Créations</div>
+                    <div class="portf">
+                        <div id="portfolio">
+                            <div class="projet" v-for="projet in projets" :id="projet.titre">
+                                <a class="noir" href="#"><img class="reca" :src="projet.image" width="200vw" height="200vw">
+                                <div class="title">{{projet.titre}}</div></a>
+                            </div>
+                        </div>
+                        <!--<img class="reca" src="Mockup.png" width="200vw" height="200vw">
+                        <img class="reca" src="Mockup.png" width="200vw" height="200vw">
+                        <img class="reca" src="Mockup.png" width="200vw" height="200vw">
+                        <img class="reca" src="Mockup.png" width="200vw" height="200vw">
+                        <img class="reca" src="Mockup.png" width="200vw" height="200vw">
+                        <img class="reca" src="Mockup.png" width="200vw" height="200vw">-->
+                    </div>
+                </scroll-page>
+
+                <scroll-page id="contact" class="contact">
+                    <div class="tcon">Contact</div>
+                    <div class="infos">Mail : <a href="mailto:lebohec.stefan@orange.fr">lebohec.stefan@orange.fr </a><br>
+                    Tel : 06 77 81 00 16 <br>
+                    site : <a href="stefanlebohec.yo.fr">stefanlebohec.yo.fr</a></div>
+                </scroll-page>
+            </scroll-container>
+            <div class="signature">Designed by Stefan Le Bohec</div>
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+	new Vue({
+        el:"#portfolio",
+        data:
+         {
+            projets: [
+                {
+                    titre: "Logo IronTrip",
+                    image: "mockup.png",
+                    description: "Logo d'application de voyage"
+                },
+                {
+                    titre: "Affiches",
+                    image: "lettre.png",
+                    description: "Logo d'application de voyage"
+                },
+                {
+                    titre: "Site Wemoov",
+                    image: "3.jpg",
+                    description: "Logo d'application de voyage"
+                },
+                {
+                    titre: "Carte de voeux",
+                    image: "Free-Classic-Invitation-Card-Mockup.png",
+                    description: "Logo d'application de voyage"
+                },
+                {
+                    titre: "Mug Irontrip",
+                    image: "Enamel Mug PSD MockUp.png",
+                    description: "Logo d'application de voyage"
+                },
+                {
+                    titre: "Logo IronTrip",
+                    image: "mockup.png",
+                    description: "Logo d'application de voyage"
+                }
+            ]
+        }
+    })
+</script>
+    </body>
+
+</html>
